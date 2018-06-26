@@ -1,0 +1,39 @@
+{
+    "name": "ophp/db",
+    "type": "library",
+    "description": "PHP Database abstraction layer",
+    "keywords": ["php-framework","php5","mysql","pdo"],
+    "homepage":"https://github.com/ojullien/ophp-Db",
+    "readme":"README.md",
+    "time":"2015-06-03",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Olivier Jullien",
+            "homepage": "https://github.com/ojullien"
+        }
+    ],
+    "require": {
+        "php": "~5.6",
+        "ext-pdo_mysql": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ophp\\Db\\": "src/"
+        }
+    },
+    "require-dev": {
+        "ext-xdebug": "*",
+        "phpunit/phpunit": "~4.6"
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "OphpTest\\Db\\": "tests/src/"
+        }
+    },
+    "scripts": {
+        "testmycode": ["vendor/bin/phpunit"],
+        "sniffemycode": ["vendor/bin/phpcs --standard=phpcs.xml src;"],
+        "messmycode": ["vendor/bin/phpmd src text ./phpmd.xml"]
+    }
+}
