@@ -1,118 +1,117 @@
 <?php
 
-namespace OphpTest\Db\Exception;
+namespace OseilleTest\Db\Exception;
 
 class ExceptionTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
-     * @covers \Ophp\Db\Exception\BadFunctionCallException
+     * @covers \Oseille\Db\Exception\BadFunctionCallException
      * @group specification
-     * @expectedException Ophp\Db\Exception\BadFunctionCallException
+     * @expectedException Oseille\Db\Exception\BadFunctionCallException
      */
     public function testBadFunctionCallException()
     {
-        throw new \Ophp\Db\Exception\BadFunctionCallException(__METHOD__);
+        throw new \Oseille\Db\Exception\BadFunctionCallException(__METHOD__);
     }
 
     /**
-     * @covers \Ophp\Db\Exception\BadMethodCallException
+     * @covers \Oseille\Db\Exception\BadMethodCallException
      * @group specification
-     * @expectedException Ophp\Db\Exception\BadMethodCallException
+     * @expectedException Oseille\Db\Exception\BadMethodCallException
      */
     public function testBadMethodCallException()
     {
-        throw new \Ophp\Db\Exception\BadMethodCallException(__METHOD__);
+        throw new \Oseille\Db\Exception\BadMethodCallException(__METHOD__);
     }
 
     /**
-     * @covers \Ophp\Db\Exception\DomainException
+     * @covers \Oseille\Db\Exception\DomainException
      * @group specification
-     * @expectedException Ophp\Db\Exception\DomainException
+     * @expectedException Oseille\Db\Exception\DomainException
      */
     public function testDomainException()
     {
-        throw new \Ophp\Db\Exception\DomainException(__METHOD__);
+        throw new \Oseille\Db\Exception\DomainException(__METHOD__);
     }
 
     /**
-     * @covers \Ophp\Db\Exception\InvalidArgumentException
+     * @covers \Oseille\Db\Exception\InvalidArgumentException
      * @group specification
-     * @expectedException Ophp\Db\Exception\InvalidArgumentException
+     * @expectedException Oseille\Db\Exception\InvalidArgumentException
      */
     public function testInvalidArgumentException()
     {
-        throw new \Ophp\Db\Exception\InvalidArgumentException(__METHOD__);
+        throw new \Oseille\Db\Exception\InvalidArgumentException(__METHOD__);
     }
 
     /**
-     * @covers \Ophp\Db\Exception\LengthException
+     * @covers \Oseille\Db\Exception\LengthException
      * @group specification
-     * @expectedException Ophp\Db\Exception\LengthException
+     * @expectedException Oseille\Db\Exception\LengthException
      */
     public function testLengthException()
     {
-        throw new \Ophp\Db\Exception\LengthException(__METHOD__);
+        throw new \Oseille\Db\Exception\LengthException(__METHOD__);
     }
 
     /**
-     * @covers \Ophp\Db\Exception\OutOfBoundsException
+     * @covers \Oseille\Db\Exception\OutOfBoundsException
      * @group specification
-     * @expectedException Ophp\Db\Exception\OutOfBoundsException
+     * @expectedException Oseille\Db\Exception\OutOfBoundsException
      */
     public function testOutOfBoundsException()
     {
-        throw new \Ophp\Db\Exception\OutOfBoundsException(__METHOD__);
+        throw new \Oseille\Db\Exception\OutOfBoundsException(__METHOD__);
     }
 
     /**
-     * @covers \Ophp\Db\Exception\OutOfRangeException
+     * @covers \Oseille\Db\Exception\OutOfRangeException
      * @group specification
-     * @expectedException Ophp\Db\Exception\OutOfRangeException
+     * @expectedException Oseille\Db\Exception\OutOfRangeException
      */
     public function testOutOfRangeException()
     {
-        throw new \Ophp\Db\Exception\OutOfRangeException(__METHOD__);
+        throw new \Oseille\Db\Exception\OutOfRangeException(__METHOD__);
     }
 
     /**
-     * @covers \Ophp\Db\Exception\OverflowException
+     * @covers \Oseille\Db\Exception\OverflowException
      * @group specification
-     * @expectedException Ophp\Db\Exception\OverflowException
+     * @expectedException Oseille\Db\Exception\OverflowException
      */
     public function testOverflowException()
     {
-        throw new \Ophp\Db\Exception\OverflowException(__METHOD__);
+        throw new \Oseille\Db\Exception\OverflowException(__METHOD__);
     }
 
     /**
-     * @covers \Ophp\Db\Exception\RuntimeException
+     * @covers \Oseille\Db\Exception\RuntimeException
      * @group specification
-     * @expectedException Ophp\Db\Exception\RuntimeException
+     * @expectedException Oseille\Db\Exception\RuntimeException
      */
     public function testRuntimeException()
     {
-        throw new \Ophp\Db\Exception\RuntimeException(__METHOD__);
+        throw new \Oseille\Db\Exception\RuntimeException(__METHOD__);
     }
 
     /**
-     * @covers \Ophp\Db\Exception\UnderflowException
+     * @covers \Oseille\Db\Exception\UnderflowException
      * @group specification
-     * @expectedException Ophp\Db\Exception\UnderflowException
+     * @expectedException Oseille\Db\Exception\UnderflowException
      */
     public function testUnderflowException()
     {
-        throw new \Ophp\Db\Exception\UnderflowException(__METHOD__);
+        throw new \Oseille\Db\Exception\UnderflowException(__METHOD__);
     }
 
     /**
-     * @covers \Ophp\Db\Exception\UnexpectedValueException
+     * @covers \Oseille\Db\Exception\UnexpectedValueException
      * @group specification
-     * @expectedException Ophp\Db\Exception\UnexpectedValueException
+     * @expectedException Oseille\Db\Exception\UnexpectedValueException
      */
     public function testUnexpectedValueException()
     {
-        throw new \Ophp\Db\Exception\UnexpectedValueException(__METHOD__);
+        throw new \Oseille\Db\Exception\UnexpectedValueException(__METHOD__);
     }
-
 }

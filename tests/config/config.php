@@ -1,10 +1,9 @@
 <?php
 /**
- * This file is a part of the Ophp framework
+ * This file is a part of the Oseille framework
  *
- * @package Db
- * @license MIT <https://github.com/ojullien/ophp-Db/blob/master/LICENSE>
- */
+ * @package Oseille/Db
+  */
 return [
     //
     // DATABASE options.

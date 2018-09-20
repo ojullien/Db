@@ -1,17 +1,16 @@
 <?php
 
 /**
- * This file is a part of the Ophp framework
+ * This file is a part of the Oseille framework
  *
- * @package Db
- * @license MIT <https://github.com/ojullien/ophp-Db/blob/master/LICENSE>
+ * @package Oseille\Db\Driver
  */
-namespace Ophp\Db\Driver;
+namespace Oseille\Db\Driver;
 
 /**
  * This class is a driver that implements MySQL PDO interface.
  */
-final class MySQL extends \PDO implements \Ophp\Db\Driver\DriverInterface
+final class MySQL extends \PDO implements \Oseille\Db\Driver\DriverInterface
 {
     /** Class section
      * ************** */
@@ -19,17 +18,17 @@ final class MySQL extends \PDO implements \Ophp\Db\Driver\DriverInterface
     /**
      * Creates a PDO instance representing a connection to a database.
      *
-     * @param \Ophp\Db\Driver\Parameters\Parameters  $parameters  Connection parameters.
-     * @param \Ophp\Db\Driver\Parameters\Credentials $credentials User name and password.
+     * @param \Oseille\Db\Driver\Parameters\Parameters  $parameters  Connection parameters.
+     * @param \Oseille\Db\Driver\Parameters\Credentials $credentials User name and password.
      * @return \PDO
-     * @throws \Ophp\Db\Exception\RuntimeException
+     * @throws \Oseille\Db\Exception\RuntimeException
      */
     public function __construct(
-        \Ophp\Db\Driver\Parameters\Parameters $parameters,
-        \Ophp\Db\Driver\Parameters\Credentials $credentials
+        \Oseille\Db\Driver\Parameters\Parameters $parameters,
+        \Oseille\Db\Driver\Parameters\Credentials $credentials
     ) {
-        if (!$parameters->valid() || !$credentials->valid()) {
-            throw new \Ophp\Db\Exception\RuntimeException('Connection options are not valid.');
+        if (! $parameters->valid() || ! $credentials->valid()) {
+            throw new \Oseille\Db\Exception\RuntimeException('Connection options are not valid.');
         }
 
         $this->sDBName = $parameters->getDBName();
@@ -74,7 +73,7 @@ final class MySQL extends \PDO implements \Ophp\Db\Driver\DriverInterface
      * @param array $expected The values in this array contains the names of the indexes (keys) that should exist in the
      *                        $header array.
      * @return array|false
-     * @throws \Ophp\Db\Exception\RuntimeException
+     * @throws \Oseille\Db\Exception\RuntimeException
      */
     public static function checkColumnNames(array $header, array $expected)
     {

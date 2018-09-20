@@ -1,17 +1,16 @@
 <?php
 
 /**
- * This file is a part of the Ophp framework
+ * This file is a part of the Oseille framework
  *
- * @package Db
- * @license MIT <https://github.com/ojullien/ophp-Db/blob/master/LICENSE>
+ * @package Oseille\Db\Layer
  */
-namespace Ophp\Db\Layer;
+namespace Oseille\Db\Layer;
 
 /**
  * Parent class for all layer.
  */
-abstract class AbstractLayer implements \Ophp\Db\Layer\LayerInterface
+abstract class AbstractLayer implements \Oseille\Db\Layer\LayerInterface
 {
     /** Class section
      * ************** */
@@ -21,24 +20,24 @@ abstract class AbstractLayer implements \Ophp\Db\Layer\LayerInterface
      *
      * @param string $name
      * @param mixed $value
-     * @throws \Ophp\Db\Exception\BadMethodCallException
+     * @throws \Oseille\Db\Exception\BadMethodCallException
      * @codeCoverageIgnore
      */
     final public function __set($name, $value)
     {
-        throw new \Ophp\Db\Exception\BadMethodCallException('Writing data to inaccessible properties is not allowed.');
+        throw new \Oseille\Db\Exception\BadMethodCallException('Writing data to inaccessible properties is not allowed.');
     }
 
     /**
      * Reading data from inaccessible properties is not allowed.
      *
      * @param string $name
-     * @throws \Ophp\Db\Exception\BadMethodCallException
+     * @throws \Oseille\Db\Exception\BadMethodCallException
      * @codeCoverageIgnore
      */
     final public function __get($name)
     {
-        throw new \Ophp\Db\Exception\BadMethodCallException('Reading data from inaccessible properties is not allowed.');
+        throw new \Oseille\Db\Exception\BadMethodCallException('Reading data from inaccessible properties is not allowed.');
     }
 
     /** Driver section
@@ -46,16 +45,16 @@ abstract class AbstractLayer implements \Ophp\Db\Layer\LayerInterface
     /*
      * Instance of database driver.
      *
-     * @var \Ophp\Db\Driver\DriverInterface
+     * @var \Oseille\Db\Driver\DriverInterface
      */
     protected $pDriver = null;
 
     /**
      * Injects the driver.
      *
-     * @param \Ophp\Db\Driver\DriverInterface $driver
+     * @param \Oseille\Db\Driver\DriverInterface $driver
      */
-    public function setDriver(\Ophp\Db\Driver\DriverInterface $driver)
+    public function setDriver(\Oseille\Db\Driver\DriverInterface $driver)
     {
         $this->pDriver = $driver;
     }

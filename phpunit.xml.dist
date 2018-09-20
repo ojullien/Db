@@ -29,7 +29,7 @@
     <php>
     </php>
     <testsuites>
-        <testsuite name="Ophp-Db Tests Suite">
+        <testsuite name="Oseille-Db Tests Suite">
             <directory suffix="Test.php">./tests/src</directory>
         </testsuite>
     </testsuites>
@@ -47,7 +47,6 @@
         <whitelist processUncoveredFilesFromWhitelist="true">
             <directory suffix=".php">./src</directory>
             <exclude>
-                <directory suffix="Stub.php">./src</directory>
                 <directory suffix="Interface.php">./src</directory>
                 <directory suffix="Interface.php">./src/Exception</directory>
             </exclude>

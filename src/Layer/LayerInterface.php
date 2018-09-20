@@ -1,22 +1,14 @@
 <?php
 
 /**
- * This file is a part of the Ophp framework
+ * This file is a part of the Oseille framework
  *
- * @category  Ophp-Db
- * @package   Db
- * @license MIT <https://github.com/ojullien/ophp-Db/blob/master/LICENSE>
+ * @package Oseille\Db\Layer
  */
-namespace Ophp\Db\Layer;
+namespace Oseille\Db\Layer;
 
 /**
  * Interface for layer.
- *
- * @category Ophp-Db
- * @package    Db
- * @subpackage Layer
- * @version    1.0.0
- * @since      1.0.0
  */
 interface LayerInterface
 {
@@ -24,7 +16,7 @@ interface LayerInterface
     /**
      * Injects the driver.
      *
-     * @param \Ophp\Db\Driver\DriverInterface $driver
+     * @param \Oseille\Db\Driver\DriverInterface $driver
      */
-    public function setDriver(\Ophp\Db\Driver\DriverInterface $driver);
+    public function setDriver(\Oseille\Db\Driver\DriverInterface $driver);
 }

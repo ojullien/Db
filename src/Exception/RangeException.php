@@ -1,12 +1,10 @@
 <?php
 /**
- * This file is a part of the Ophp framework
+ * This file is a part of the Oseille framework
  *
- * @category  Ophp-Db
- * @package   Exception
- * @license MIT <https://github.com/ojullien/ophp-Db/blob/master/LICENSE>
+ * @package Oseille\Db\Exception
  */
-namespace Ophp\Db\Exception;
+namespace Oseille\Db\Exception;
 
 /**
  * Exception thrown to indicate range errors during program execution.

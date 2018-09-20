@@ -1,17 +1,16 @@
 <?php
 
 /**
- * This file is a part of the Ophp framework
+ * This file is a part of the Oseille framework
  *
- * @package Db
- * @license MIT <https://github.com/ojullien/ophp-Db/blob/master/LICENSE>
+ * @package Oseille\Db\Layer
  */
-namespace Ophp\Db\Layer;
+namespace Oseille\Db\Layer;
 
 /**
  * This class is a layer that loads script into database.
  */
-final class Script extends \Ophp\Db\Layer\AbstractLayer
+final class Script extends \Oseille\Db\Layer\AbstractLayer
 {
     /** Class section
      * ************** */
@@ -19,10 +18,10 @@ final class Script extends \Ophp\Db\Layer\AbstractLayer
     /**
      * Constructor.
      *
-     * @param null|\Ophp\Db\Driver\DriverInterface $driver
+     * @param null|\Oseille\Db\Driver\DriverInterface $driver
      * @codeCoverageIgnore
      */
-    public function __construct(\Ophp\Db\Driver\DriverInterface $driver = null)
+    public function __construct(\Oseille\Db\Driver\DriverInterface $driver = null)
     {
         if (null !== $driver) {
             $this->setDriver($driver);
@@ -37,14 +36,14 @@ final class Script extends \Ophp\Db\Layer\AbstractLayer
      *
      * @param string $path Path to the script.
      * @return string|false
-     * @throws \Ophp\Db\Exception\InvalidArgumentException
+     * @throws \Oseille\Db\Exception\InvalidArgumentException
      */
     private function read($path)
     {
         $sPath = is_string($path) ? realpath(trim($path)) : '';
 
-        if ((!strlen($sPath) > 0) || (!is_file($path))) {
-            throw new \Ophp\Db\Exception\InvalidArgumentException('The path provided is not valid.');
+        if ((! strlen($sPath) > 0) || (! is_file($path))) {
+            throw new \Oseille\Db\Exception\InvalidArgumentException('The path provided is not valid.');
         }
 
         return file_get_contents($sPath);
@@ -58,8 +57,8 @@ final class Script extends \Ophp\Db\Layer\AbstractLayer
      * @param array  $replace         The replacement value that replaces found search values.
      * @param bool   $formatdelimiter Format the delimeters.
      * @return int
-     * @throws \Ophp\Db\Exception\InvalidArgumentException
-     * @throws \Ophp\Db\Exception\RuntimeException
+     * @throws \Oseille\Db\Exception\InvalidArgumentException
+     * @throws \Oseille\Db\Exception\RuntimeException
      */
     public function load($path, array $search = [], array $replace = [], $formatdelimiter = false)
     {
@@ -78,7 +77,7 @@ final class Script extends \Ophp\Db\Layer\AbstractLayer
         // Execute
         $iReturn = $this->pDriver->exec($sData);
         if (false === $iReturn) {
-            throw new \Ophp\Db\Exception\RuntimeException('Cannot execute the SQL statement.');
+            throw new \Oseille\Db\Exception\RuntimeException('Cannot execute the SQL statement.');
         }
 
         return $iReturn;

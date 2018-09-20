@@ -1,12 +1,11 @@
 <?php
 
 /**
- * This file is a part of the Ophp framework
+ * This file is a part of the Oseille framework
  *
- * @package Db
- * @license MIT <https://github.com/ojullien/ophp-Db/blob/master/LICENSE>
+ * @package Oseille\Db\Driver\Parameters
  */
-namespace Ophp\Db\Driver\Parameters;
+namespace Oseille\Db\Driver\Parameters;
 
 /**
  * Connection parameters.
@@ -21,24 +20,24 @@ final class Parameters
      *
      * @param string $name
      * @param mixed $value
-     * @throws \Ophp\Db\Exception\BadMethodCallException
+     * @throws \Oseille\Db\Exception\BadMethodCallException
      * @codeCoverageIgnore
      */
     public function __set($name, $value)
     {
-        throw new \Ophp\Db\Exception\BadMethodCallException('Writing data to inaccessible properties is not allowed.');
+        throw new \Oseille\Db\Exception\BadMethodCallException('Writing data to inaccessible properties is not allowed.');
     }
 
     /**
      * Reading data from inaccessible properties is not allowed.
      *
      * @param string $name
-     * @throws \Ophp\Db\Exception\BadMethodCallException
+     * @throws \Oseille\Db\Exception\BadMethodCallException
      * @codeCoverageIgnore
      */
     public function __get($name)
     {
-        throw new \Ophp\Db\Exception\BadMethodCallException('Reading data from inaccessible properties is not allowed.');
+        throw new \Oseille\Db\Exception\BadMethodCallException('Reading data from inaccessible properties is not allowed.');
     }
 
     /** Database section
@@ -54,14 +53,14 @@ final class Parameters
      * Sets the database name.
      *
      * @param string $name Database name.
-     * @return \Ophp\Db\Driver\Parameters\Parameters
-     * @throws \Ophp\Db\Exception\InvalidArgumentException If something wrong occured.
+     * @return \Oseille\Db\Driver\Parameters\Parameters
+     * @throws \Oseille\Db\Exception\InvalidArgumentException If something wrong occured.
      */
     public function setDBName($name)
     {
         $this->sDatabaseName = is_string($name) ? trim($name) : '';
         if (\strlen($this->sDatabaseName) === 0) {
-            throw new \Ophp\Db\Exception\InvalidArgumentException('The database name provided is not valid.');
+            throw new \Oseille\Db\Exception\InvalidArgumentException('The database name provided is not valid.');
         }
         return $this;
     }
@@ -112,8 +111,8 @@ final class Parameters
      *
      * @param array $parameters Array of options. An associative array of with keys:
      *                          'hostname'(string), 'port'(string), 'charset'(string) and 'driver_options'(array)
-     * @return \Ophp\Db\Driver\Parameters\Parameters
-     * @throws \Ophp\Db\Exception\InvalidArgumentException If something wrong occured.
+     * @return \Oseille\Db\Driver\Parameters\Parameters
+     * @throws \Oseille\Db\Exception\InvalidArgumentException If something wrong occured.
      */
     public function setParameters(array $parameters)
     {
@@ -128,7 +127,7 @@ final class Parameters
         );
 
         if (count($parameters) != 4) {
-            throw new \Ophp\Db\Exception\InvalidArgumentException('The options provided are not valid.');
+            throw new \Oseille\Db\Exception\InvalidArgumentException('The options provided are not valid.');
         }
 
         $this->sHostname = is_string($parameters['hostname']) ? trim($parameters['hostname']) : '';
@@ -137,7 +136,7 @@ final class Parameters
         $this->aOptions = is_array($parameters['driver_options']) ? $parameters['driver_options'] : [];
 
         if ((strlen($this->sHostname) === 0) || (strlen($this->sPort) === 0) || (strlen($this->sCharset) === 0)) {
-            throw new \Ophp\Db\Exception\InvalidArgumentException('The parameters provided are not valid.');
+            throw new \Oseille\Db\Exception\InvalidArgumentException('The parameters provided are not valid.');
         }
 
         return $this;

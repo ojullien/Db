@@ -1,17 +1,16 @@
 <?php
 
 /**
- * This file is a part of the Ophp framework
+ * This file is a part of the Oseille framework
  *
- * @package Db
- * @license MIT <https://github.com/ojullien/ophp-Db/blob/master/LICENSE>
+ * @package Oseille\Db\Driver
  */
-namespace Ophp\Db\Driver;
+namespace Oseille\Db\Driver;
 
 /**
  * This class is a driver stub.
  */
-final class Stub implements \Ophp\Db\Driver\DriverInterface
+final class Stub implements \Oseille\Db\Driver\DriverInterface
 {
     /** Class section
      * ************** */
@@ -19,14 +18,14 @@ final class Stub implements \Ophp\Db\Driver\DriverInterface
     /**
      * Creates a PDO instance representing a connection to a database.
      *
-     * @param \Ophp\Db\Driver\Parameters\Parameters  $parameters  Connection parameters.
-     * @param \Ophp\Db\Driver\Parameters\Credentials $credentials User name and password.
+     * @param \Oseille\Db\Driver\Parameters\Parameters  $parameters  Connection parameters.
+     * @param \Oseille\Db\Driver\Parameters\Credentials $credentials User name and password.
      * @return \PDO
      * @throws \RuntimeException
      */
     public function __construct(
-        \Ophp\Db\Driver\Parameters\Parameters $parameters,
-        \Ophp\Db\Driver\Parameters\Credentials $credentials
+        \Oseille\Db\Driver\Parameters\Parameters $parameters,
+        \Oseille\Db\Driver\Parameters\Credentials $credentials
     ) {
         $this->sDBName = $parameters->getDBName();
     }
@@ -107,7 +106,7 @@ final class Stub implements \Ophp\Db\Driver\DriverInterface
      *                               Some drivers have driver specific options that may be set at prepare-time.
      * @return PDOStatement
      */
-    public function prepare($statement, $driver_options = array())
+    public function prepare($statement, $driver_options = [])
     {
         return $this->iExpectedPrepare;
     }

@@ -1,12 +1,10 @@
 <?php
 /**
- * This file is a part of the Ophp framework
+ * This file is a part of the Oseille framework
  *
- * @category  Ophp-Db
- * @package   Exception
- * @license MIT <https://github.com/ojullien/ophp-Db/blob/master/LICENSE>
+ * @package Oseille\Db\Exception
  */
-namespace Ophp\Db\Exception;
+namespace Oseille\Db\Exception;
 
 /**
  * Exception thrown when performing an invalid operation on an empty container, such as removing an element.
